@@ -158,8 +158,8 @@ class NotificationHelper(private val context: Context) {
                 .setContentText(newMessages.joinToString("\n") { it.text })
                 .setWhen(newMessages.last().timestamp)
         }
-
-        notificationManager.notify(chat.contact.id.toInt(), builder.build())
+        //chat.contact.id.toInt() use constant to update the chat window propertly
+        notificationManager.notify(1, builder.build())
     }
 
     fun dismissNotification(id: Long) {
